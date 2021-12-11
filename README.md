@@ -1,4 +1,4 @@
-# my-chart-project
+# FIRST AND SECOND
 
 ## Project setup
 ```
@@ -23,7 +23,11 @@ npm run lint
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
+## Tools
 
+```
+npm i @amcharts/amcharts4
 
+```
 
-
+# END
