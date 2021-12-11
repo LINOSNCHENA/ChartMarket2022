@@ -21,9 +21,9 @@ export default {
     title.fontSize = 25;
     title.tooltipText = "Sales in millions of US$ during selected period";
 
-    chart.tooltip = new am4core.Tooltip();
-    chart.tooltip.label.maxWidth = 150;
-    chart.tooltip.label.wrap = true;
+    // chart.tooltip = new am4core.Tooltip();
+    // chart.tooltip.label.maxWidth = 150;
+    // chart.tooltip.label.wrap = true;
 
     let data = [];
     chart.data = data;
@@ -85,8 +85,8 @@ export default {
     let series1 = chart.series.push(new am4charts.LineSeries()); // FIVE
     series1.dataFields.valueY = "value";
     series1.dataFields.dateX = "date";
-     series1.strokeWidth = 6;
-    series1.fill = am4core.color("green");
+    series1.strokeWidth = 6;
+    // series1.fill = am4core.color("green");
     series1.tooltipText = "1ACEI_units {name}: [bold]{valueY}[/]";
     series1.name = "ACEI";
 
@@ -99,14 +99,14 @@ export default {
     series2.animationsEnabled = true;
     series2.tensionX = 1.0;
     series2.showOnInit = false;
-    series2.tooltipText = "2CECZ_units {name}: [bold]{valueY}[/]";
+  //  series2.tooltipText = "2CECZ_units {name}: [bold]{valueY}[/]";
     series2.name = "CECZ";
 
     var series3 = chart.series.push(new am4charts.ColumnSeries()); // SEVEN
     series3.dataFields.valueY = "sales";
     series3.dataFields.dateX = "date";
     series3.fill = am4core.color("blue");
-    series3.tooltipText = "3CHIL_Units {name}: [bold]{valueY}[/]";
+   // series3.tooltipText = "3CHIL_Units {name}: [bold]{valueY}[/]";
     series3.name = "CHILANGA";
 
     // Add legend
@@ -184,15 +184,20 @@ export default {
       let axis = ev.target.chart.xAxes.getIndex(0);
       let from = axis.getPositionLabel(axis.toAxisPosition(range.start));
       let to = axis.getPositionLabel(axis.toAxisPosition(range.end));
-
-      chart.tooltipText =
-        "1_units {name}: [bold]{valueY}[/]  2_units {name}: [bold]{valueY}[/] 3_units {name}: [bold]{valueY}[/]";
-      chart.tooltip.background.fill = am4core.color("red");
-      chart.tooltip.label.textAlign = "middle";
-      chart.cursor.maxTooltipDistance = 90;
-      chart.tooltip.disabled = false;
-      chart.tooltip.getFillFromObject = false;
-      chart.tooltip.background.propertyFields.stroke = am4core.color("red");
+        series1.tooltipText =
+        "41_units {name}: [bold]{valueY}[/]  42_units {name}: [bold]{valueY}[/] 43_units {name}: [bold]{valueY}[/]";
+      series1.tooltip.background.fill = am4core.color("red");
+      series1.tooltip.label.textAlign = "middle";
+      series1.cursor.maxTooltipDistance = 30;
+      series1.tooltip.label.maxWidth = 15;
+      series1.tooltip.label.wrap = true;
+      series1.fill = am4core.color("red");
+      // series1.strokeWidth = 6;
+      series1.tooltip.background.propertyFields.stroke = am4core.color("red");
+      series1.tooltipText =
+        "41_units {name}: [bold]{valueY}[/]  42_units {name}: [bold]{valueY}[/] 43_units {name}: [bold]{valueY}[/]";
+      series2 = series1;
+      series3 = series1;
 
       // alert("Selected from " + from + " to " + to);
       console.log("Selected from " + from + " to " + to);
