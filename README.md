@@ -30,4 +30,12 @@ npm i @amcharts/amcharts4
 
 ```
 
+## ACCESS POINTS
+
+```
+http://localhost:8080/
+http://localhost:8081/
+
+```
+
 # END
