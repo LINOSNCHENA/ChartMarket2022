@@ -13,7 +13,10 @@ npm i @amcharts/amcharts4
 ## Acess Points
 
 ```
+vue1
 http://localhost:8080/
+
+vue2
 http://localhost:8081/
 
 ```
